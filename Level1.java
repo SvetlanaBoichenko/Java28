@@ -28,10 +28,4 @@ public class Level1 {
 
 
 
-        public static void main (String[]args){
-
-            Level1 lev = new Level1();
-            lev.squirrel(0);
-        }
-
-    }
+        
