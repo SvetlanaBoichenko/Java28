@@ -1,26 +1,24 @@
-import java.util.*;
-
 public class Level1 {
     Level1() {
-    };
-
-    public static int myfact(int num) {
-        if (num == 1) return 1;
-        int res = 1;
-        for (int i = 2; i <= num; i++) {
-            res = res * (i);
-        }
-        return res;
     }
 
-    public static int squirrel(int N) {
-        int fact = myfact(N);       // N! nuts
+    public static int odometer(int[] oksana) {
+        int dist = 0;  // rasstoyanie
+        int dt = 0;
+        int v = 0;
 
-        while (fact >= 10) {        // looking for the first num
-            fact = fact / 10;       // delete last num
+        for (int i = 0; i < oksana.length; i += 2) {
+            if (i == 0) {
+                v = oksana[0];
+                dt = oksana[1];
+            } else {
+                dt = oksana[i + 1] - oksana[i - 1];
+                v = oksana[i];
+            }
+            dist = dist + dt * v;
         }
 
-        return fact;
+        return dist;
     }
 
 
@@ -28,4 +26,12 @@ public class Level1 {
 
 
 
-        
+
+
+    public static void main (String[]args){
+        Level1 lev = new Level1 ();
+        int [] ksana = {10,1, 20,2, 10,5, 1,10, 4, 33};
+        int s = lev.odometer(ksana);
+    }
+
+}
