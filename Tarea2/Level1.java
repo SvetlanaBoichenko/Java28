@@ -22,16 +22,3 @@ public class Level1 {
     }
 
 
-//}
-
-
-
-
-
-    public static void main (String[]args){
-        Level1 lev = new Level1 ();
-        int [] ksana = {10,1, 20,2, 10,5, 1,10, 4, 33};
-        int s = lev.odometer(ksana);
-    }
-
-}
