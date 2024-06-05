@@ -79,11 +79,3 @@ public class Level1 {
 
 
 
-    public static void main (String[]args){
-        int[] batt = {1,1, 3,5, 4,4};
-        int day = 0;
-        day = ConquestCampaign(7, 8, 3, batt);
-
-        day = day + 1;
-    }
-}
