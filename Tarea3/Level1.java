@@ -69,9 +69,6 @@ public class Level1 {
         if (battalion.length == 0 ) return 0;
 
         int[][] battalion2 = desembarco(N, M, battalion);  // Array for new coord
-
-        int i, j = 0;
-        int i1, j1 = 0;
         int day = 1;
 
         if (L >= M*N)
