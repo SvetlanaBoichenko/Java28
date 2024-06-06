@@ -35,10 +35,7 @@ public class Level1 {
                     if (j1 >= 0 && j1 < M)
                         if (batt[i][j1] == 0)
                             batt[i][j1] = 1;
-
-
                 }
-
             }
         return batt;
     }
@@ -93,18 +90,12 @@ public class Level1 {
             battalion2 = set2 (N, M, battalion2);
         }
         return day;
+    } 
 
-
-    }
-
-
-        public static void main (String[]args) {
-            int[] batt = {1,1, };
-            int day = 0;
-            day = ConquestCampaign(5, 5, 1, batt);
-
-            day = day + 1;
-        }
+    
 }
+
+
+  
 
 
