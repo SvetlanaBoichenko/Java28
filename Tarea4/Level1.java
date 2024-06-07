@@ -1,7 +1,6 @@
 public class Level1 {
 
     public static int [] funcsort (int [] tele1, int L) {
-        //int L = tele1.length;
         int Lmin = 0;
         int[] tele2 = new int[L];
 
@@ -22,7 +21,7 @@ public class Level1 {
                             tele2 [index - 1] = Lmin;
                         }
                         else
-                        break;//****
+                        break;//
 
                         index--;
                         }
@@ -32,7 +31,6 @@ public class Level1 {
             Lmin = tele2[i];
             }
          return tele2;
-
     }
 
     public static int [] funcreverc (int [] tele2, int N) {
@@ -47,7 +45,6 @@ public class Level1 {
             k--;
             if (k - i <= 1) break; // nechet count of arr
         }
-
      return newtele;
     }
 
