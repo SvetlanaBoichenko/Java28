@@ -62,10 +62,7 @@ public class Level1 {
         return newtele1;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+ 
+} 
 
-        int[] ishmatrix  = {10,2,13,19,5,16,7,8,18};
-        MadMax (9, ishmatrix);
-    }
-}
+
