@@ -60,10 +60,8 @@ public class Level1 {
         return newtele1;
     }
 
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-
-        int[] ishmatrix  = {3,2,6,8,1};
-        MadMax (5, ishmatrix);
-    }
+ 
 }
+
+
+
