@@ -3,37 +3,36 @@
 
  public class Level1
     {
-        public static int [] funcsort (int [] tele1, int L) {
+        public static int [] funcsort (int [] arr1, int L) {
             int Lmin = 0;
-            int[] tele2 = new int[L];
+            int[] arr2 = new int [L];
 
             for (int i = 0; i < L; i++) {
                 if (i == 0) {
-                    Lmin = tele1[0];
-                    tele2[0] =  Lmin;
+                    Lmin = arr1 [0];
+                    arr2[0] =  Lmin;
                 }
                 else {
-                    if (tele1[i] < Lmin) {
-                        Lmin = tele1[i];
+                    if (arr1 [i] < Lmin) {
+                        Lmin = arr1 [i];
 
-                        int index = i;
-                        while (index > 0) {
-                            if (tele2 [index-1] > Lmin) {
+                       for ( int index = i; index > 0; index --) {
 
-                                tele2 [index] = tele2 [index-1];
-                                tele2 [index - 1] = Lmin;
+                            if (arr2 [index-1] > Lmin) {
+
+                                arr2 [index] = arr2 [index-1];
+                                arr2 [index - 1] = Lmin;
                             }
                             else
                                 break;//****
 
-                            index--;
                         }
                     }
-                    else tele2[i] = tele1[i];
+                    else arr2[i] = arr1[i];
                 }
-                Lmin = tele2[i];
+                Lmin = arr2[i];
             }
-            return tele2;
+            return arr2;
         }
 
 
