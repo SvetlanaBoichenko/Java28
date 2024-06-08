@@ -1,5 +1,4 @@
-
- import java.util.*;
+import java.util.*;
 
  public class Level1
     {
@@ -24,8 +23,7 @@
                                 arr2 [index - 1] = Lmin;
                             }
                             else
-                                break;//****
-
+                                break;    //****
                         }
                     }
                     else arr2[i] = arr1[i];
@@ -58,11 +56,7 @@
         }
 
 
-    public static void main(String[] args) {
-        int tabsotr[] = {11,13,1,5,3,10};
-        int tabsalold[] = {40,40,30,10,35,10};
+} 
 
-        int [] synctabsalary = SynchronizingTables(6, tabsotr,tabsalold);
 
-    }
-}
+
