@@ -1,8 +1,4 @@
-
 import java.util.*;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.sqrt;
 
 public class Level1 {
 
@@ -33,17 +29,19 @@ public class Level1 {
             int d1 = 0;
             int d2 = 0;
 
-            if (abs(x1 - x2) == 1)
+            if (Math.abs (x1 - x2) == 1)
                 d1 = 1;
-            if (abs(y1 - y2) == 1)
+            if (Math.abs (y1 - y2) == 1)
                 d2 = 1;
             if ((d1 + d2) == 1)
                 res = res + 1;
             else
-                res = res +  sqrt(2);
+                res = res + Math.sqrt(2);   //1.41421356237;
         }
         return res;
     }
+
+
 
     public static String delsymb(String inpstr, char el) {
         String retstr = inpstr;
@@ -83,9 +81,12 @@ public class Level1 {
         str = delsymb (str, '0');
 
         return str;
-    }
+    } 
 
- 
+
 }
+
+
+
 
 
