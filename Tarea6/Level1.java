@@ -1,4 +1,4 @@
-import java.util.*;
+mport java.util.*;
 
 public class Level1 {
 
@@ -40,9 +40,7 @@ public class Level1 {
         }
         return res;
     }
-
-
-
+    
     public static String delsymb(String inpstr, char el) {
         String retstr = inpstr;
         char[] ca = retstr.toCharArray();
@@ -63,6 +61,7 @@ public class Level1 {
             }
         }
         retstr = new String(ca2);
+
         return retstr;
     }
 
@@ -80,7 +79,7 @@ public class Level1 {
         str = delsymb (str, '0');
 
         return str;
-    } 
+    }
 
 
 }
