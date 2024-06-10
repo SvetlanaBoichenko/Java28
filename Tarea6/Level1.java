@@ -1,9 +1,8 @@
 import java.util.*;
 
-public class Level1 {
-
-    public static HashMap initmap(int[][] shema, int x, int y) {
-
+public class Level1 { 
+    
+    public static HashMap initmap (int[][] shema, int x, int y) {
         HashMap<Integer, Integer[]> buttmap = new HashMap();
         for (int i = 0; i < x; i++)
             for (int j = 0; j < y; j++) {
@@ -12,7 +11,7 @@ public class Level1 {
             }
         return buttmap;
     }
-    //--------------------------------------------
+   
     public static double maptosum(HashMap<Integer, Integer[]> bmap, int[] bhist, int N, double m1, double m2) {
         Integer[] curcoord;
         Integer x2, y2, x1, y1;
@@ -40,7 +39,7 @@ public class Level1 {
         }
         return res;
     }
-    //---------------------------
+  
     public static int ndosymb(String str, char el) {
         int nt = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -50,7 +49,7 @@ public class Level1 {
         }
         return nt;
     }
-    //-----------------------------
+   
     public static String delsymb(String inpstr, char el) {
         String retstr = inpstr;
         char[] ca = retstr.toCharArray();
@@ -71,12 +70,9 @@ public class Level1 {
             }
         }
         retstr = new String(ca2);
-
         return retstr;
     }
 
-
-//-----------------------
     public static String PatternUnlock (int N, int [] hits) {
         int [][] buttshema = {{6,1,9},{5,2,8},{4,3,7}};
         String str = "";
@@ -99,34 +95,23 @@ public class Level1 {
         else
             len = str.length();
 
-
         for (int i = 1; i<= per; i++)
-            sum = sum * 10; //9.999999 -> 999999.9  99.99999->9999999  9->90000
+            sum = sum * 10;     //9.999999 -> 999999.9  99.99999->9999999  9->90000
 
         str = Double.toString (sum);
 
         if (str.length() > len) {
             str = str.substring (0, len );
         }
-
         str = delsymb (str, '0');
-
         return str;
     }
 
     
-    public static void main(String[] args) {
-        int[] inpbutt = {1,2,3,4,5,6,2,7,8,9}; //{9,8,2,7,3,2,1,6,5,4};  //
-        String resstr =  PatternUnlock(10, inpbutt);
-
-    }
 }
 
-/*
-okruglit
-char[] ca = str.toCharArray();
-        if (ca [len - 1] >= 5) {
-sum =sum + 1;
+
+    
         }
 
         */
