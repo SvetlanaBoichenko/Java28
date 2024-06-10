@@ -85,19 +85,7 @@ public class Level1 {
         return str;
     }
 
-
-    public static void main(String[] args) {
-        int[] inpbutt = {1,2,3,4,5,6,2,7,8,9}; //{9,8,2,7,3,2,1,6,5,4};  //
-        String resstr =  PatternUnlock(10, inpbutt);
-
-    }
+ 
 }
 
-/*
-okruglit
-char[] ca = str.toCharArray();
-        if (ca [len - 1] >= 5) {
-sum =sum + 1;
-        }
 
-        */
