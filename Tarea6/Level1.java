@@ -63,7 +63,6 @@ public class Level1 {
             }
         }
         retstr = new String(ca2);
-
         return retstr;
     }
 
