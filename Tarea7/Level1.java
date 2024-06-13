@@ -55,7 +55,7 @@ public class Level1 {
                 ind1 = strarray[i].indexOf(subs, x1);  // pos of rirst sym of subs
 
                 if (ind1 >= 0) {                        // probel or begin or last
-                    if (ind1 == 0 || (strarray[i].charAt(ind1 - 1) == ' ') == true) {//&
+                    if (ind1 == 0 || (strarray[i].charAt(ind1 - 1) == ' ') == true) {    
                         if ((ind1 +Ls) == strarray[i].length()   ||
                                 ( strarray[i].charAt(ind1 + Ls) == ' ')) {
                             rettab[i]++;
@@ -84,87 +84,10 @@ public class Level1 {
         strarray = A2.toArray (new String [A2.size()]);
 
         tabwords = MakeLocTab ( strarray, subs,  tabsize);
-
        return tabwords;
     }
 
-    public static void main (String[] args) {
-        int [] resA;
-        String s1 ="как упоительны в россии вечера";
-        String s2 = "в";
-     //   "1) строка разбивается на набор строк через выравнивание по заданной ширине."//
-       resA = WordSearch(5, s1, s2);
-    }
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    for (j = 0; j < sublen; j++) {
-
-        if (bw == true & j == (sublen - 1) &(i+j <slen)) { //
-        A1.add (s.substring(i, ppos));
-        if (i+j <slen) {
-        if (s.charAt(i + j - 1) == ' ' | s.charAt(i + j) == ' ')
-bw = false; }
-        else
-        break;
-
-i = ppos-1;
-        break;
-        }
-
-        else if (bw == true & j < (sublen - 1)& (i+j <slen)) {
-        if (s.charAt (i + j) == ' ') {
-bw = false;
-ppos = j + i;
-                        A1.add (s.substring (i, ppos));
-i = ppos-1;
-        break;
-        }
-
-        } else if (bw == false & j == (sublen - 1) & (i+j <slen)) {
-        A1.add (s.substring (i, ppos));
-        if (i+j <slen) {
-        if (s.charAt(i + j - 1) != ' ' | s.charAt(i + j) != ' ')
-bw = true; }
-        else
-        break;
-
-i = ppos-1;
-
-        } else if (bw == false & j < (sublen - 1) & (i+j <slen)) {
-        if (s.charAt (i + j) == ' ') {
-bw = false;
-ppos = i + j;
-                    }
-
-                            }
-                            }
-
-
- */
