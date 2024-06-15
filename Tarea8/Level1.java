@@ -20,10 +20,8 @@ public class Level1
 
         return S ;
     }
-    public static void main(String[] args) {
-        int [] data = {1,-2,3,4,5,6, 17};
-        int summa =  SumOfThe ( 7,  data);
 
-
-    }
 }
+
+
+
