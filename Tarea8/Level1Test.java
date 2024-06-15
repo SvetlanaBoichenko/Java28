@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class Level1Test {
     @Test
@@ -11,7 +9,6 @@ public class Level1Test {
         int waitS = 0;
         int reals = Level1.SumOfThe(3, arr1);
         assertTrue(waitS == reals);
-
     }
 
     @Test
@@ -21,9 +18,7 @@ public class Level1Test {
         int waitS = 2;
         int reals = Level1.SumOfThe(2, arr1);
         assertTrue(waitS == reals);
-
     }
-
 
     @Test
     public void tessort3() {
@@ -35,3 +30,4 @@ public class Level1Test {
 
     }
 }
+
