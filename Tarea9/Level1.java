@@ -1,4 +1,4 @@
-//import java.util.*;
+
 import java.util.*;
 
 public class Level1
@@ -39,7 +39,6 @@ public class Level1
 
         return b2;
     }
-
 
     public static String DeCodirovka (String s) {
         String b2 = s;
@@ -87,10 +86,7 @@ public class Level1
     }
 
 
-    public static void main(String[] args) {
+} 
 
-        String s = "отдай мою кроличью лапку"; // "Наша Таня громко плачет Таня"; //
-        String s2 = TheRabbitsFoot (s, true);
 
-    }
-}
+
