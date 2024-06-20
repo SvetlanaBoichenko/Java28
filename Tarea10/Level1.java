@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class Level1 {
@@ -13,7 +12,6 @@ public class Level1 {
         map.put((int)('$'), 29);
         map.put((int)('%'), 22);
         map.put((int)('&'), 24);
-      //  map.put((int)('''),  3);
         map.put((int)('('), 12);
         map.put((int)(')'), 12);
         map.put((int)('*'), 17);
@@ -120,11 +118,7 @@ public class Level1 {
     }
 
 
-    public static void main(String[] args) {
+} 
 
-        String Ln = "mama\'";
-        int count=  PrintingCosts(Ln);
 
-        System.out.println(count);
-    }
-}
+
