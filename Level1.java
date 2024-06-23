@@ -1,130 +1,152 @@
-
 import java.util.*;
 
 public class Level1 {
+        public static int [][]   EqLens (String s1, String s2) {
 
-    public static int PrintingCosts(String Line) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+            int Len1 = s1.length();
+            int Len2 = s2.length();
 
-        map.put((int)('!'),  9);
-        map.put((int)(' '), 0);
-        map.put((int)('"'),  6);
-        map.put((int)('#'), 24);
-        map.put((int)('$'), 29);
-        map.put((int)('%'), 22);
-        map.put((int)('&'), 24);
-      //  map.put((int)('''),  3);
-        map.put((int)('('), 12);
-        map.put((int)(')'), 12);
-        map.put((int)('*'), 17);
-        map.put((int)('+'), 13);
-        map.put((int)(','),  7);
-        map.put((int)('-'),  7);
-        map.put((int)('.'),  4);
-        map.put((int)('/'), 10);
-        map.put((int)('0'), 22);
-        map.put((int)('1'), 19);
-        map.put((int)('2'), 22);
-        map.put((int)('3'), 23);
-        map.put((int)('4'), 21);
-        map.put((int)('5'), 27);
-        map.put((int)('6'), 26);
-        map.put((int)('7'), 16);
-        map.put((int)('8'), 23);
-        map.put((int)('9'), 26);
-        map.put((int)(':'),  8);
-        map.put((int)(';'), 11);
-        map.put((int)('<'), 10);
-        map.put((int)('='), 14);
-        map.put((int)('>'), 10);
-        map.put((int)('?'), 15);
-        map.put((int)('@'), 32);
-        map.put((int)('A'), 24);
-        map.put((int)('B'), 29);
-        map.put((int)('C'), 20);
-        map.put((int)('D'), 26);
-        map.put((int)('E'), 26);
-        map.put((int)('F'), 20);
-        map.put((int)('G'), 25);
-        map.put((int)('H'), 25);
-        map.put((int)('I'), 18);
-        map.put((int)('J'), 18);
-        map.put((int)('K'), 21);
-        map.put((int)('L'), 16);
-        map.put((int)('M'), 28);
-        map.put((int)('N'), 25);
-        map.put((int)('O'), 26);
-        map.put((int)('P'), 23);
-        map.put((int)('Q'), 31);
-        map.put((int)('R'), 28);
-        map.put((int)('S'), 25);
-        map.put((int)('T'), 16);
-        map.put((int)('U'), 23);
-        map.put((int)('V'), 19);
-        map.put((int)('W'), 26);
-        map.put((int)('X'), 18);
-        map.put((int)('Y'), 14);
-        map.put((int)('Z'), 22);
-        map.put((int)('['), 18);
-        map.put((int)('\\'), 10);
-        map.put((int)(']'), 18);
-        map.put((int)('^'),  7);
-        map.put((int)('_'),  8);
-        map.put((int)('`'),  3);
-        map.put((int)('a'), 23);
-        map.put((int)('b'), 25);
-        map.put((int)('c'), 17);
-        map.put((int)('d'), 25);
-        map.put((int)('e'), 23);
-        map.put((int)('f'), 18);
-        map.put((int)('g'), 30);
-        map.put((int)('h'), 21);
-        map.put((int)('i'), 15);
-        map.put((int)('j'), 20);
-        map.put((int)('k'), 21);
-        map.put((int)('l'), 16);
-        map.put((int)('m'), 22);
-        map.put((int)('n'), 18);
-        map.put((int)('o'), 20);
-        map.put((int)('p'), 25);
-        map.put((int)('q'), 25);
-        map.put((int)('r'), 13);
-        map.put((int)('s'), 21);
-        map.put((int)('t'), 17);
-        map.put((int)('u'), 17);
-        map.put((int)('v'), 13);
-        map.put((int)('w'), 19);
-        map.put((int)('x'), 13);
-        map.put((int)('y'), 24);
-        map.put((int)('z'), 19);
-        map.put((int)('{'), 18);
-        map.put((int)('|'), 12);
-        map.put((int)('}'), 18);
-        map.put((int)('~'),  9);
-        map.put((int)('\''),  3);
+            String s11 = s1;
+            String s22 = s2;
 
-        int len = Line.length();
-        int sum = 0;
-
-        for (int i = 0; i< len; i++){
-            Integer s = 0;
-            char symb = Line.charAt(i);
-            s = map.get((int) symb);
-
-            if (s == null) {
-                s = 23;
+            if (Len1 < Len2) {
+                int temp = Len1;
+                Len1 = Len2;
+                Len2 = temp;
+                s11 = s2;
+                s22 = s1;
             }
-            sum = sum + s;
+
+            int[][] strs = new int[3][Len1];
+
+            int[] results = new int[Len1];
+            int[] results2 = new int[Len1];
+            int[] resarray = new int[Len1];
+
+            for (int i = 0; i < Len1; i++) {
+                results[i] = Integer.parseInt(s11.substring(i, i + 1));
+                resarray[i] = 0;
+            }
+
+            int j = 0;
+            for (int i = Len1 - Len2; i < Len1; i++) {
+                results2[i] = Integer.parseInt(s22.substring(j, j + 1));
+                j++;
+            }
+
+            strs[0] = results;
+            strs[1] = results2;
+            strs[2] = resarray;
+
+        return strs;
+    }
+
+
+        public static String BigMinus(String s1, String s2) {
+            if (s1.equals(s2)) return "0";
+
+            int [][] iarrays =  EqLens (s1, s2);
+
+            int [] results = iarrays[0];
+            int [] results2 = iarrays[1];
+            int [] resarray = iarrays[2];
+            int Len1 = results.length;
+
+            boolean curmenos = false;
+            int a,b;
+
+            for (int i = Len1-1; i >= 0; i--) {
+                a = results[i];
+                b = results2[i];
+
+                if (curmenos == true)   //
+                   a--;
+
+                if (a < b ) {
+                    curmenos = true;
+                    a += 10;
+                }
+                else
+                    curmenos = false;
+
+                int res = Math.abs (a - b);
+
+                resarray[i] = res;
+            }
+
+            int k;
+            int[] newArray;
+            for( k = 0;  k < resarray.length;  k++ ) {
+                if (resarray[k] != 0)
+                  break;
+            }
+             newArray = new int[resarray.length-k];
+
+            for (int i = 0; i< resarray.length-k; i++ ) {
+                 newArray[i] = resarray[i+k];
+            }
+
+
+            String sres = Arrays.toString(newArray).replaceAll("\\[|]| ", "");
+
+            return sres.replaceAll("\\p{Punct}" , "");
         }
-        return sum;
+
+
+
+        public static void main(String[] args) {
+
+           String s =  BigMinus("1000", "95");
+            System.out.println(s);
+        }
     }
 
 
-    public static void main(String[] args) {
 
-        String Ln = "mama\'";
-        int count=  PrintingCosts(Ln);
 
-        System.out.println(count);
-    }
-}
+
+
+    /*
+            for (int i = 0; i< Len; i++) {
+                int k;
+                if (f1)
+                    k = Character.getNumericValue (s1.charAt(i));
+                else
+                    k = Character.getNumericValue(s2.charAt(i));
+
+                resarray[i] = k;
+            }
+            */
+
+/*
+            int Len1 = s1.length();
+            int Len2 = s2.length();
+
+            String s11 = s1;
+            String s22 = s2;
+
+            if (Len1 < Len2) {
+                int temp = Len1;
+                Len1 = Len2;
+                Len2 = temp;
+                s11 = s2;
+                s22 = s1;
+            }
+
+
+            int [] results = new int [Len1];
+            int [] results2 = new int[Len1];
+            int [] resarray = new int[Len1];
+
+            for (int i = 0; i < Len1; i++) {
+                results[i] = Integer.parseInt(s11.substring(i,i+1));
+                resarray[i] = 0;
+            }
+
+            int j = 0;
+            for (int i = Len1-Len2; i < Len1; i++) {
+                results2[i] = Integer.parseInt(s22.substring(j,j+1));
+                j++;
+            }
+*/
+
