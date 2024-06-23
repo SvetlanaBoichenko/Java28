@@ -5,6 +5,7 @@ public class Level1 {
 
             int Len1 = s1.length();
             int Len2 = s2.length();
+
             String s11 = s1;
             String s22 = s2;
 
@@ -15,8 +16,9 @@ public class Level1 {
                 s11 = s2;
                 s22 = s1;
             }
-
+            
             int[][] strs = new int[3][Len1];
+
             int[] results = new int[Len1];
             int[] results2 = new int[Len1];
             int[] resarray = new int[Len1];
@@ -32,10 +34,26 @@ public class Level1 {
                 j++;
             }
 
-            strs[0] = results;
-            strs[1] = results2;
-            strs[2] = resarray;
+            boolean f1 = true;
+            if (Len1 == Len2) {
+                for (int n = 0; n<Len1; n++) {
+                    if (results2[n] > results[n]) {
+                         f1 = false;
+                         break;
+                    }
+                }
+            }
 
+            if (f1) {
+                strs[0] = results;
+                strs[1] = results2;
+            }
+            else {
+                strs[0] = results2;
+                strs[1] = results;
+            }
+            strs[2] = resarray;
+        
         return strs;
     }
 
@@ -77,8 +95,7 @@ public class Level1 {
                 if (resarray[k] != 0)
                   break;
             }
-            
-           newArray = new int[resarray.length-k];
+             newArray = new int[resarray.length-k];
 
             for (int i = 0; i< resarray.length-k; i++ ) {
                  newArray[i] = resarray[i+k];
@@ -87,6 +104,7 @@ public class Level1 {
             String sres = Arrays.toString(newArray).replaceAll("\\[|]| ", "");
             return sres.replaceAll("\\p{Punct}" , "");
         }
+
 
 
     }
