@@ -39,7 +39,7 @@ public class Level1 {
 
         String sindex = String.valueOf(ind+1);
 
-        if ( per >= 50.000)
+        if ( per > 50.000)
             retstr = "majority winner " +  sindex;
         else
             retstr = "minority winner " +  sindex;
