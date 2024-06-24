@@ -1,5 +1,5 @@
 
-//import java.util.*;
+import java.util.*;
 
 public class Level1 {
 
@@ -48,12 +48,7 @@ public class Level1 {
     }
 
 
-    public static void main (String[] args) {
-
-        int [] Votes = {1,4,3,4,5,1,11,1,2};
-
-        String s =  MassVote(9, Votes);
-        System.out.println("Hello world!");
-    }
-
 }
+
+
+
