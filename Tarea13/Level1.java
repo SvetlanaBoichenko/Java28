@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1
 {
     public static int changeroot (int num, boolean octal) {
@@ -33,11 +35,8 @@ public class Level1
         return resarr;
     }
 
-    public static void main (String[] args) {
-        int [] arr = {0, 0};
-        int N = 4;
+ 
+} 
 
-        int [] resarr =  UFO (N, arr, false);
-        System.out.println( resarr[0]+" "+ resarr[1] );
-    }
-}
+
+
