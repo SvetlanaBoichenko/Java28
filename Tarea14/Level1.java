@@ -1,3 +1,4 @@
+    import java.util.*; 
 
     public class Level1
     {
@@ -27,7 +28,7 @@
                     continue;
                 }
 
-                int n = Tcur /svo; // //сколько раз svo помещается в Тсиr
+                int n = Tcur /svo; //
                 int ost = Tcur % svo;
 
                 if (ost == 0) {
@@ -46,16 +47,11 @@
                 Tcur += dt;
             }
             Tcur += (L - Tlenold);
-            return Tcur ;
+            return Tcur;
         }
 
 
-
-        public static void main(String[] args) {
-            int [][] a = {{3,2,2}, {7,3,3}, {11,1,1}};
-
-            int L =  Unmanned (13, 3, a);
-
-            System.out.println(L);
-        }
     }
+
+
+
