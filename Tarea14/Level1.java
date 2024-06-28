@@ -1,57 +1,56 @@
-    import java.util.*; 
+import java.util.*;
 
-    public class Level1
-    {
-        public static int Unmanned (int L, int N, int [][] track) {   //3
-            int[][] track1 = track.clone();
+        public class Level1
+        {
+            public static int Unmanned (int L, int N, int [][] track) {   //3
 
-            int Tcur = 0;          // real cur pos//
-            int Tlenold = 0;       // old len from array without dt
-            int sv1, sv2  = 0;     // T semaforo
-            int dt   = 0;          // Wait
-            int dtsv = 0;          // leave in red
-            int Tlen = 0;
+                int Tcur = 0;          // real cur pos//
+                int sv1, sv2  = 0;     //  semaforos
 
-            for (int i = 0; i < track1.length; i++) {
-                int [] subtrack = track1[i];
-                Tlen = subtrack [0];
-                sv1 = subtrack [1];
-                sv2 = subtrack [2];
+                int dtcomm = 0;          // stop in red
+                int Len1 = 0;
+                int Lenold = 0;         // old len  without dt
 
-                int svo = sv1 + sv2;
-                Tcur += Tlen-Tlenold;// +dt;
-                Tlenold = Tlen;
+                for (int i = 0; i < N; i++) {
+                    int [] subtrack = track[i];
+                    Len1 = subtrack [0];
 
-                if(Tcur < sv1){
-                    dt = 0;
-                    Tcur = sv1;//+= dt;
-                    continue;
+                    if (Len1 >= L) {
+                        break;
+                    }
+
+                    sv1 = subtrack [1];
+                    sv2 = subtrack [2];
+
+                    Tcur += Len1 - Lenold;       // +next pos
+                    Lenold = Len1;
+
+                    if (Tcur < sv1){
+                        dtcomm += sv1-Tcur;
+                        Tcur = sv1;
+                        continue;
+                    }
+
+                    int ost = Tcur % (sv1 + sv2);
+
+                    if (ost == 0) {
+                        Tcur += sv1;
+                        dtcomm += sv1;
+                        continue;
+                    }
+
+                    if (sv1 > ost){
+                        Tcur+= (sv1-ost);
+                        dtcomm += (sv1-ost);
+                    }
+
                 }
+                return (L + dtcomm);
 
-                int n = Tcur /svo; //
-                int ost = Tcur % svo;
-
-                if (ost == 0) {
-                    Tcur += sv1;
-                    dt = 0;
-                    continue;
-                }
-
-                ost = Tcur - n*svo;
-
-                if (sv1 > ost){
-                    dt = sv1-ost;
-                }
-                else dt = 0;
-
-                Tcur += dt;
-            }
-            Tcur += (L - Tlenold);
-            return Tcur;
-        }
+                
+            } 
 
 
-    }
-
+            
 
 
