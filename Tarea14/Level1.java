@@ -31,8 +31,13 @@ import java.util.*;
                         continue;
                     }
 
-                    int ost = Tcur % (sv1 + sv2);
-
+                    int ost;
+                    if(sv1 + sv2 > 0)
+                        ost = Tcur % (sv1 + sv2);
+                    else {
+                        continue;
+                    }
+                        
                     if (ost == 0) {
                         Tcur += sv1;
                         dtcomm += sv1;
