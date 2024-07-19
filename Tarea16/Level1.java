@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Level1
 {
@@ -11,12 +12,12 @@ public class Level1
                 arr2[0] =  Lmax;
             }
             else {
-                if (arr1[i] > Lmax) {                     //
+                if (arr1[i] > Lmax) {                     
                     Lmax = arr1[i];
 
                     int index = i;
                     for (index = i; index > 0; index-- ) {
-                        if (arr2 [index-1] < Lmax) {         // 
+                        if (arr2 [index-1] < Lmax) {          
 
                             arr2 [index] = arr2 [index-1];
                             arr2 [index - 1] = Lmax;
