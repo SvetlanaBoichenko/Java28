@@ -1,3 +1,4 @@
+
 public class Level1
 {
     public static int [] funcsortback (int [] arr1, int L) {
@@ -10,20 +11,18 @@ public class Level1
                 arr2[0] =  Lmax;
             }
             else {
-                if (arr1[i] > Lmax) { //<
+                if (arr1[i] > Lmax) {                     //
                     Lmax = arr1[i];
 
                     int index = i;
                     for (index = i; index > 0; index-- ) {
-                        if (arr2 [index-1] < Lmax) { // >
+                        if (arr2 [index-1] < Lmax) {         // 
 
                             arr2 [index] = arr2 [index-1];
                             arr2 [index - 1] = Lmax;
                         }
                         else
-                            break;//
-
-                        //index--;
+                            break;        //
                     }
                 }
                 else arr2[i] = arr1[i];
@@ -44,16 +43,11 @@ public class Level1
                 bsum += B[i-1];
             }
         }
-
         return bsum ;
     }
 
-    public static void main(String[] args) {
-        int [] A = {2,5,7,12,23,15,11,4,6, 24};
 
-        int [] B =  funcsortback (A, 10);
-        int s = MaximumDiscount(10, A);
+} 
 
-        System.out.println(s);
-    }
-}
+
+
