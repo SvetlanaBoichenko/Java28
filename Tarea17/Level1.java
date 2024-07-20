@@ -25,13 +25,11 @@ public class Level1
                 break;
             ind = s1.indexOf ('*');
         }
-
         return true;
     }
 
-    public static void main(String[] args) {
-        String a = "*.*";
-        boolean bres = LineAnalysis (a);
-        System.out.println(bres);
-    }
-}
+ 
+} 
+
+
+
