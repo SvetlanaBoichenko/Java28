@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1
 {
     public static boolean LineAnalysis(String line)
