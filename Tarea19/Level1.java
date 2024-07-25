@@ -28,7 +28,6 @@ public class Level1
             sitems2[i] = (entry.getKey() + " " + entry.getValue());
             i++;
         }
-
        return sitems2;
     }
 
@@ -42,7 +41,6 @@ public class Level1
             String sub = stmp.substring(end + 1);
             nums[i] = Integer.valueOf(sub);
         }
-
 
         String [] sitems3 = new String [sitems2.length];
         Arrays.sort(nums, Collections.reverseOrder());
@@ -69,9 +67,7 @@ public class Level1
     {
         String [] sitems = items.clone();
 
-       // Arrays.sort(sitems);
-
-        String[] sitems2 = SumPrecios (N, sitems); // sum iguals precios
+        String[] sitems2 = SumPrecios (N, sitems); // sum iguals str
 
         Arrays.sort(sitems2);
 
@@ -80,26 +76,8 @@ public class Level1
         return sitems5;
     }
 
-    public static void main(String[] args) {
-        String[] shop = {
-                "Одувачик 10",
-                "платье1 5",
-                "Диван4 110",
-                "сумка32 2",
-                "платье1 1",
-                "платье1 11",
-                "сумка32 20",
-                "сумка128 144",
-                "Одувачик 100",
-                "Диван 110",
-                "платье 6",
-                "Диван4 12",
-                "Диван4 12",
-                "Диван5 12"
-        };
+ 
+} 
 
-        String[] sshop = ShopOLAP(14, shop);
 
-        System.out.println(sshop);
-    }
-}
+
