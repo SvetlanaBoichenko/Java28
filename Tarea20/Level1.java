@@ -20,9 +20,9 @@ public class Level1
         if (cmd == 1 & (oldcmd == 4)) {
             oldcmd = cmd;
             Undolist.clear();
-            Undolist.add (0,curstr); //predposl
+            Undolist.add (0,curstr);     //predposl
             curstr = curstr + command.substring (2);
-            Undolist.add(0,curstr);  //posl
+            Undolist.add(0,curstr);      //posl
             ind = 0;
             return  curstr;
         }
@@ -33,11 +33,11 @@ public class Level1
             Undolist.add(0,curstr);
             return  curstr;
         }
-//-------------------------------------------------
+
         if (cmd == 2 & (oldcmd == 4) ) {
             oldcmd = cmd;
             Undolist.clear();
-            Undolist.add (0,curstr); //predposl
+            Undolist.add (0,curstr);     //predposl
             ind = 0;
             int count = Integer.parseInt (command.substring(2));
 
@@ -47,26 +47,24 @@ public class Level1
             } else
                 curstr = curstr.substring(0, curstr.length() - count);
 
-            Undolist.add(0, curstr); //posl
+            Undolist.add(0, curstr);     //posl
             return curstr;
         }
 
         if (cmd == 2) {
             oldcmd = cmd;
-            int count = Integer.parseInt (command.substring(2));
+            int count = Integer.parseInt (command.substring (2));
             if (count >= curstr.length())
                 curstr = "";
              else
-                curstr = curstr.substring(0, curstr.length()-count);
+                curstr = curstr.substring (0, curstr.length() - count);
 
-             Undolist.add(0,curstr);
+             Undolist.add (0,curstr);
             return curstr;
         }
 
-    //------------------------------------------------
-
         if (cmd == 3 & command.length() >= 2) {
-            int count = Integer.parseInt(command.substring(2));
+            int count = Integer.parseInt (command.substring(2));
             if (count >= curstr.length()) {
                 curstr = "";
                 return "";
@@ -85,7 +83,7 @@ public class Level1
             return curstr;
         }
 
-        if (cmd == 4 ){//& Undolist.size() > 1) {
+        if (cmd == 4 ){
             ind++;
             if (ind >= Undolist.size()) {
                 ind = Undolist.size() - 1;
@@ -101,7 +99,7 @@ public class Level1
             return curstr;
         }
 
-        if (cmd == 5) { // & Undolist.size() > 1) {
+        if (cmd == 5) { 
             ind--;
             if (ind < 0) {
                 ind = 0;
@@ -113,74 +111,8 @@ public class Level1
         return "";
     }
 
-    public static void main(String[] args) {
-        String strres = "";
-        strres = BastShoe ("1 Привет");
-        System.out.println(strres);
-        strres = BastShoe ("1 , Мир!");
-        System.out.println(strres);
-        strres = BastShoe ("1 ++");
-        System.out.println(strres);
-        strres = BastShoe ("2 2");
-        System.out.println(strres);
-        strres = BastShoe ("4"); // Привет Мир ++
-        System.out.println(strres);
-        strres = BastShoe ("4"); // Привет Мир
-        System.out.println(strres);
-        strres = BastShoe ("1 *"); // Привет Vbh*
-        System.out.println(strres);
-        strres = BastShoe ("4"); // Привет Мир
-        System.out.println(strres);
-        strres = BastShoe ("4"); // Привет Мир
-        System.out.println(strres);
-        strres = BastShoe ("4"); // Привет Мир
-        System.out.println(strres);
-        strres = BastShoe ("3 6"); // ,
-        System.out.println(strres);
-        strres = BastShoe ("2 100"); //
-        System.out.println(strres);
+    
+} 
 
-        strres = BastShoe ("1 Привет");
-        System.out.println(strres);
-        strres = BastShoe ("1  , Мир!");
-        System.out.println(strres);
-        strres = BastShoe ("1 ++");
-        System.out.println(strres);
 
-        strres = BastShoe ("4"); //Привет, Мир
-        System.out.println(strres);
-        strres = BastShoe ("4"); //Привет
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Привет, Мир
-        System.out.println(strres);
-        strres = BastShoe ("4"); //Привет
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Привет , Мир
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Привет, Мир ++
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Привет, Мир ++
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Привет, Мир ++
-        System.out.println(strres);
-        strres = BastShoe ("4"); //Привет, Мир
-        System.out.println(strres);
-        strres = BastShoe ("4"); //Привет
-        System.out.println(strres);
-        strres = BastShoe ("2 2"); // Прив
-        System.out.println(strres);
-        strres = BastShoe ("4"); //Привет
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Прив
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Прив
-        System.out.println(strres);
-        strres = BastShoe ("5"); //Прив
-        System.out.println(strres);
 
-        strres = BastShoe ("99 nnn"); //Прив
-        System.out.println(strres);
-
-        System.out.println("the end");
-    }
-}
