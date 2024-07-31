@@ -1,7 +1,8 @@
+import java.util.*;
+
 public class Level1
 {
     public static String Fmas (String sinput) {
-
         int len = sinput.length();
         char[] arr = new char [len];
         arr = sinput.toCharArray();
@@ -22,7 +23,6 @@ public class Level1
         return "";
     }
 
-
     public static char [] revers (char [] arr1) {
        int j = arr1.length-1;
         for (int i = 0; i < arr1.length/2; i++) {
@@ -34,8 +34,7 @@ public class Level1
         return arr1;
     }
 
-
-
+    
     public static String BiggerGreater(String input)
     {
         String sresult = Fmas (input);
@@ -67,11 +66,8 @@ public class Level1
         return "";
     }
 
-    public static void main(String[] args) {
-        String inp = "ksidcba";
-
-        String res = BiggerGreater (inp);
-        System.out.println(inp);
-        System.out.println(res);
-    }
+  
 }
+
+
+
