@@ -64,57 +64,10 @@ public class Level1
 
       return false;
     }
-        public static void main (String[]args)
-        {
-            String str = "xyz";
-
-            boolean b = SherlockValidString(str);
-
-            System.out.println(b);
-
-        }
+     
 
 }
 
 
-    /*
 
-          Arrays.sort(arr);
-        List L = new ArrayList();   // Arrays.asList(arr);
-
-      char val = 0, oldval =      oldval = arr[0];;
-       for (int i = 1; i < arr.length; i++) {
-
-           val = arr[i];
-           if (val != oldval) {
-               L.add(val);
-               oldval = val;
-           }
-       }
-
-*/
-
-       /*
-      for (int i = 1; i < L.size(); i++){ //L.size()
-       val = L.get(i);
-
-           if (val == old_val & camb == 0) {
-               count1++;
-                L1.remove(i);
-            }
-
-            if  (val == old_val & camb > 0) {
-               count2++;
-               L1.remove(i);
-            }
-
-            if (val != old_val) {
-             camb++;
-            }
-
-        if ((camb ==1 & count1 > 1 & count2 >1) | camb >1)
-                return false;
-        }
-
-
-*/
+  
