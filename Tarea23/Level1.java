@@ -117,13 +117,8 @@ public class Level1 {
         return res ;
     }
 
-    public static void main(String[] args) {
-        String [] stree = {".+..", "..+.", ".+.."};
-
-        String [] s =  TreeOfLife(3, 4, 12, stree);
-
-        System.out.println(s[0]);
-        System.out.println(s[1]);
-        System.out.println(s[2]);
-    }
+ 
 }
+
+
+
