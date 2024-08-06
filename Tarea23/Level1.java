@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1 {
     public static int[][] Inittab(int H, int W, int N, String[] tree) {
         int[][] tab = new int[H][W];
