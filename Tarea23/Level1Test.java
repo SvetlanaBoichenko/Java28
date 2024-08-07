@@ -39,4 +39,15 @@ public class Level1Test {
         assertArrayEquals (wres, res);
     }
 
+
+    @Test
+    public void test7() {
+        String[] ish = {".......","...+...","....+..",".......","++.....","++....."};
+
+        String[] wres = {".......","...+...","....+..",".......","++.....","++....."};
+
+        String[] res = Level1.TreeOfLife(6,7, 24, ish);
+        assertArrayEquals (wres, res);
+    }
+    
 }
