@@ -124,14 +124,9 @@ public class Level1 {
         }
         return res;
     }
-    public static void main(String[] args) {
-        String [] stree = {".......","...+...","....+..",".......","++.....","++....."};
 
-        String [] s = TreeOfLife(6,7,24, stree);
+    
+} 
 
-        for (int i = 0; i < 6; i++) {
-            System.out.print(s[i] + "  ");
-            System.out.println(i);
-        }
-    }
-}
+
+
