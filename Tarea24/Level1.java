@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1
 {
     public static void MatrixChange (char[][] stmp, char[][] stmp2) {
@@ -10,7 +12,6 @@ public class Level1
             }
         }
     }
-
 
     public static void Turn1( char[][] stmp, int nvlt) {
         int pos = 0;
@@ -36,7 +37,7 @@ public class Level1
                     stmp2[x][y] = stmp[x][y];
                 }
             }
-//--------------------line--------------------------
+       //--------------------line--------------------------
        int i = pos;  // Line1 ->
             int j ;
        for (j = pos + 1; j < pos + W; j++) {
@@ -47,8 +48,7 @@ public class Level1
        for (j = pos + W - 1; j > pos; j--) {
            stmp2[i][j - 1] = stmp[i][j];
        }
-
-//------------row---------------------------------
+      //------------row---------------------------------
        j = pos + W - 1; //row1 V
        for (i = pos; i < H + pos-1; i++) {
            stmp2[i + 1][j] = stmp[i][j];
@@ -85,37 +85,11 @@ public class Level1
         for (int i = 0; i < M; i++) {
             Matrix[i] = new String (stmp[i]);
         }
-
     }
 
-    public static void main(String[] args) {
-        String Mat[] = {"123456","234567","345678", "456789"} ;
-        MatrixTurn(Mat, 4, 6, 1);
-
-
-        System.out.println("");
-    }
+    
 }
 
 
 
 
-/*
-            if (M-1 <= 1 & S1 >2) {
-                for (int i = pos; i <= N/2; i++) {
-                    stmp2[pos][i] = stmp[pos][N - i];
-                    stmp2[pos][N - i] = stmp[pos][i];
-                }
-                MatrixChange(stmp, stmp2);
-                return;
-            }
-
-            if (N-1 <= 1 & S2 > 2) {
-                for (int i = pos; i <= M/2; i++) {
-                    stmp2[i][pos] = stmp[M - i][pos];
-                    stmp2[M - i][pos] = stmp[i][pos];
-                }
-                MatrixChange(stmp, stmp2);
-                return;
-            }
-*/
