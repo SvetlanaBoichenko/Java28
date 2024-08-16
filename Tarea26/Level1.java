@@ -11,7 +11,7 @@ public class Level1
             arrb[0] = false; //  Sum1 no 10
             return arrb;
         }
-        arrb[0] = true; // sum1 = 10
+        arrb[0] = true;      // sum1 = 10
 
         if (k-j < 4 ) {
             arrb[1] = false; //
@@ -36,7 +36,7 @@ public class Level1
 
         boolean [] resarr = {false, false};
         int j = -1;
-        boolean b = false;//, oldb = false, firstflag = true;
+        boolean b = false;
         int len = village.length();
 
         for (int i = 0; i < len; i++) {
@@ -48,18 +48,17 @@ public class Level1
             }
 
             if (Character.isDigit(a) & j >= 0) {
-                resarr = LookW (sarr, j, i); // только 1 раз, а нам надо много
+                resarr = LookW (sarr, j, i); 
 
                 if (resarr[0] == true & resarr[1] == false) {
-                    b = false;// больше не проверем вообще ничего
+                    b = false;     // nada mas
                     break;
                 }
 
                 if (resarr[0] == true & resarr[1] == true) {
-                    b = true; // иначе b  не  меняем
+                    b = true;     // nada cambio
                 }
 
-               // oldb = b;
                 i--;
                 j = -1;
             }
@@ -68,21 +67,7 @@ public class Level1
         return b;
     }
 
-    public static void main(String[] args) {
-        boolean b = white_walkers("  5   5   5");
-        System.out.println(b);
-    }
+    
 }
 
 
-
-
-
-/*
-        "axxb6===4xaf5===eee5" => true
-       "5==ooooooo=5=5" => false
-        "abc=7==hdjs=3gg1=======5" => true
-        "aaS=8" => false
-        "9===1===9===1===9" => true
-
- */
