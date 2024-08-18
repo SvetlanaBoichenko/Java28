@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1
 {
     public static boolean isSort (int [] arr) {
@@ -33,13 +35,11 @@ public class Level1
 
 
     public static int [] MoveNum (int [] arr, int in, int itek) {
-
         for (int i = in; i < itek; i++) {
             int temp = arr[i];
             arr[i] = arr [itek];
             arr [itek] = temp;
             itek--;
-
         }
         return arr;
     }
@@ -52,36 +52,25 @@ public class Level1
         int len = F.length;
         int minindex = 0;
 
-        for (int i = 0; i < len; i++){  // ищем мин и его индекс
+        for (int i = 0; i < len; i++){  
             minindex = MinIndex (F, i, len);
 
             if (minindex == i) {
                 continue;
             }
-            // индекс мин больше чем надо
-            // 1. перестановка
+          
             ChangeIndex (F1, i, minindex);
             if (isSort (F1)) return true;
 
             F1 = F.clone();
             MoveNum(F1, i, minindex);
             break;
-           // return (isSort (F1)) ;
         }
         return (isSort (F1)) ;
     }
 
 
-    public static void main(String[] args) {
-        int arr2[] = {1,3,2};    // 1,5,4,3,2,6  // 9, 5, 3, 7, 1
-       boolean b = Football(arr2, 4);
-        System.out.println(b);
-
-    }
 }
 
-// 1. тсортирован ли
-// Находим минимум  и его i
-// Если мин на своем месте, продолжаем
-// если нет - меняем местами с нужным i
-// или - делаем поворот части массива начиная с мин(i)
+
+
