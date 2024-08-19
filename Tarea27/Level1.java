@@ -46,7 +46,7 @@ public class Level1
 
     public static boolean Football(int F[], int N)
     {
-        if (isSort (F)) return true;
+        if (isSort (F)) return false;
 
         int [] F1 = F.clone();
         int len = F.length;
