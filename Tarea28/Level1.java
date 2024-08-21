@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Level1
 {
     public static String Keymaker(int k)
