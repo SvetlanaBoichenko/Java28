@@ -23,9 +23,8 @@ public class Level1
         return s1 ;
     }
 
-    public static void main(String[] args) {
-        String s = Keymaker(25);
 
-        System.out.println(s);
-    }
 }
+
+
+
