@@ -1,105 +1,70 @@
 import java.util.*;
 
-public class Level1
-{
-    public static String[] SumPrecios (int N, String [] sitems) {
-        Hashtable<String, Integer> hashtable = new Hashtable<>();
+    public class Level1 {
 
-        for (int i = 0; i < N; i++) {
-            String sstr = sitems[i];
+        public static int PrintingCosts(String Line) {
 
-            int end = sstr.indexOf(" ");
-            String ssub = sstr.substring(0, end);
-            String ssub2 = sstr.substring (end);
-            ssub2 = ssub2.replaceAll(" ","");
+           List<Map> ls = new ArrayList<>();
+           List<Map> ls2 = new ArrayList<>();
 
-            int res = Integer.valueOf (ssub2);
+            Map<Character, Integer> map12 = Map.of('!', 9, ' ', 0, '"', 6, '#', 24, '$', 29, '%', 22, '&', 24, '(', 12, ')', 12);
+            Map<Character, Integer> map13 = Map.of( '+', 13, ',', 7, '-', 7, '.', 4, '/', 10, '0', 22, '1', 19, '2', 22, '3', 23);
+            Map<Character, Integer> map14 = Map.of('*', 17, '+', 13, ',', 7, '-', 7, '.', 4, '/', 10, '0', 22, '1', 19, '2', 22, '3', 23);
+            Map<Character, Integer> map15 = Map.of('4', 21, '5', 27, '6', 26, '7', 16, '8', 23, '9', 26, ':', 8, ';', 11, '<', 10, '=', 14);
+            Map<Character, Integer> map16 = Map.of('>', 10, '?', 15, '@', 32, 'A', 24, 'B', 29, 'C', 20, 'D', 26, 'E', 26, 'F', 20, 'G', 25);
+            Map<Character, Integer> map17 = Map.of('H', 25, 'I', 18, 'J', 18, 'K', 21, 'L', 16, 'M', 28, 'N', 25, 'O', 26, 'P', 23, 'Q', 31);
+            Map<Character, Integer> map18 = Map.of('S', 25, 'T', 16, 'U', 23, 'V', 19, 'W', 26, 'X', 18, 'Y', 14, 'Z', 22, '[', 18, '\\', 10);
+            Map<Character, Integer> map19 = Map.of('^', 7, '_', 8, '`', 3, 'a', 23, 'b', 25, 'c', 17, 'd', 25, 'e', 23, 'f', 18, 'g', 30);
+            Map<Character, Integer> map20 = Map.of('h', 21, 'R', 28, ']', 18, 'i', 15, 'j', 20, 'k', 21, 'l', 16, 'm', 22, 'n', 18, 'o', 20);
+            Map<Character, Integer> map21 = Map.of('p', 25, 'q', 25, 'r', 13, 's', 21, 't', 17, 'u', 17, 'v', 13, 'w', 19, 'x', 13, 'y', 24);
+            Map<Character, Integer> map22 = Map.of('z', 19, '{', 18, '|', 12, '}', 18, '~', 9, '\'', 3);
 
-            if (hashtable.containsKey (ssub)){
-                int val = hashtable.get(ssub);
-                res = val + res;
-            }
-            hashtable.put (ssub, res);
-        }
+            ls2 = List.of (map12, map13, map14,map15, map16, map17, map18, map19,map20,map21,map22);
 
-        String [] sitems2 = new String [hashtable.size()];
-        int i = 0;
-        for (Map.Entry<String, Integer> entry : hashtable.entrySet()) {
-            sitems2[i] = (entry.getKey() + " " + entry.getValue());
-            i++;
-        }
+            ls = List.of( Map.of('!', 9, ' ', 0, '"', 6, '#', 24, '$', 29, '%', 22, '&', 24, '(', 12, ')', 12),
+                           Map.of( '+', 13, ',', 7, '-', 7, '.', 4, '/', 10, '0', 22, '1', 19, '2', 22, '3', 23),
+                           Map.of('*', 17, '+', 13, ',', 7, '-', 7, '.', 4, '/', 10, '0', 22, '1', 19, '2', 22, '3', 23),
+                           Map.of('4', 21, '5', 27, '6', 26, '7', 16, '8', 23, '9', 26, ':', 8, ';', 11, '<', 10, '=', 14),
+                           Map.of('>', 10, '?', 15, '@', 32, 'A', 24, 'B', 29, 'C', 20, 'D', 26, 'E', 26, 'F', 20, 'G', 25),
+                           Map.of('H', 25, 'I', 18, 'J', 18, 'K', 21, 'L', 16, 'M', 28, 'N', 25, 'O', 26, 'P', 23, 'Q', 31),
+                           Map.of('S', 25, 'T', 16, 'U', 23, 'V', 19, 'W', 26, 'X', 18, 'Y', 14, 'Z', 22, '[', 18, '\\', 10),
+                           Map.of('^', 7, '_', 8, '`', 3, 'a', 23, 'b', 25, 'c', 17, 'd', 25, 'e', 23, 'f', 18, 'g', 30),
+                           Map.of('h', 21, 'R', 28, ']', 18, 'i', 15, 'j', 20, 'k', 21, 'l', 16, 'm', 22, 'n', 18, 'o', 20),
+                           Map.of('p', 25, 'q', 25, 'r', 13, 's', 21, 't', 17, 'u', 17, 'v', 13, 'w', 19, 'x', 13, 'y', 24),
+                            Map.of('z', 19, '{', 18, '|', 12, '}', 18, '~', 9, '\'', 3)  );
 
-       return sitems2;
-    }
+            int len = Line.length();
+            Integer s1 = null;
 
+            int sum = 0;
+            Map <Character, Integer> m = new HashMap<>();
 
-    public static String[] sortnum (String[] sitems2) {
-        Integer [] nums = new Integer[sitems2.length];
+            for (int i = 0; i < len; i++) {
 
-        for (int i = 0; i < sitems2.length; i++) {
-            String stmp = sitems2[i];
-            int end = stmp.indexOf(" ");
-            String sub = stmp.substring(end + 1);
-            nums[i] = Integer.valueOf(sub);
-        }
+                for (int j = 0; j < ls.size(); j++){
 
+                   m = (Map)ls.get(j);
 
-        String [] sitems3 = new String [sitems2.length];
-        Arrays.sort(nums, Collections.reverseOrder());
-
-        for (int i = 0; i < sitems2.length; i++) {
-            String stmp = sitems2[i];
-            int end = stmp.indexOf(" ");
-            String sub = stmp.substring(end + 1);
-            int curnum = Integer.valueOf(sub);
-
-            for (int j = 0; j < nums.length; j++) {
-                if (nums[j].intValue() == curnum)    {
-                    nums[j] = -1;
-                    sitems3[j] = sitems2[i];
-                    break;
+                    s1  = m.get(Line.charAt(i));
+                    if (s1!= null)
+                        break;
                 }
+
+                if (s1 == null) {
+                    s1 = 23;
+                }
+                sum = sum + s1.intValue();
             }
+            return sum;
         }
-        return sitems3;
-    }
 
 
-    public static String [] ShopOLAP(int N, String [] items)
-    {
-        String [] sitems = items.clone();
-
-       // Arrays.sort(sitems);
-
-        String[] sitems2 = SumPrecios (N, sitems); // sum iguals precios
-
-        Arrays.sort(sitems2);
-
-        String [] sitems5 =  sortnum (sitems2);
-
-        return sitems5;
-    }
 
     public static void main(String[] args) {
-        String[] shop = {
-                "Одувачик 10",
-                "платье1 5",
-                "Диван4 110",
-                "сумка32 2",
-                "платье1 1",
-                "платье1 11",
-                "сумка32 20",
-                "сумка128 144",
-                "Одувачик 100",
-                "Диван 110",
-                "платье 6",
-                "Диван4 12",
-                "Диван4 12",
-                "Диван5 12"
-        };
 
-        String[] sshop = ShopOLAP(14, shop);
+        String Ln = "mama\'*";
+        int count=  PrintingCosts(Ln);
 
-        System.out.println(sshop);
+        System.out.println(count);
     }
 }
