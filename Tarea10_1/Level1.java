@@ -30,11 +30,7 @@ public class Level1 {
         return sum;
     }
 
-    public static void main(String[] args) {
-
-        String Ln = "mama'/";
-        int count=  PrintingCosts(Ln);
-
-        System.out.println(count);
-    }
+  
 }
+
+
